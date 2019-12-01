@@ -1,0 +1,23 @@
+<h1>Burger-Logger</h1>
+
+<p>Burger List</p>
+<ul>
+    {{#each burgers}}
+    <li>
+        <p><span class="label">ID:</span>{{this.id}}</p>
+        <p><span class="label">BURGER:</span>{{this.burger_name}}</p>
+    </li>
+    <button type="submit" id="devourBtn">Devour</button>
+    {{/each}}
+</ul>
+
+<h2>Add Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="auth">Burger Name</label>
+    <input type="text" id="burgName" name="burger_name">
+  </div>
+
+  <button type="submit" id="addBtn">Add to List</button>
+</form>
