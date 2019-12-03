@@ -4,10 +4,11 @@
 <ul>
     {{#each burgers}}
     <li>
-        <p><span class="label">ID:</span>{{this.id}}</p>
-        <p><span class="label">BURGER:</span>{{this.burger_name}}</p>
+        <p><span class="label">ID:</span>{{id}}</p>
+        <p><span class="label">BURGER:</span>{{burger_name}}</p>
     </li>
-    <button type="submit" id="devourBtn">Devour</button>
+    <img src="../public/assets/images/burger.png" alt="burger icon">
+    <button onclick="eatBurger" id="devourBtn">Devour</button>
     {{/each}}
 </ul>
 
@@ -19,5 +20,5 @@
     <input type="text" id="burgName" name="burger_name">
   </div>
 
-  <button type="submit" id="addBtn">Add to List</button>
+  <button onclick="insertBurger" type="submit" id="addBtn">Add to List</button>
 </form>
