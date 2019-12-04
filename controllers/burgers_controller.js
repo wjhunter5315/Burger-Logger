@@ -2,9 +2,9 @@ var express = require("express");
 var burger = require("../models/burger.js");
 
 // Routes??
-var router = express();
+var app = express();
 
-router.get("/", function(req, res) {
+app.get("/", function(req, res) {
     connection.query("SELECT * FROM burgers:", function(err, data) {
         if (err) {
             return res.status(500).end();
@@ -13,7 +13,7 @@ router.get("/", function(req, res) {
     });
 });
 
-router.post("/api/burgers", function(req, res) {
+app.post("/api/burgers", function(req, res) {
     connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.burger_name], 
     function(err,result) {
         if (err) {
@@ -23,7 +23,7 @@ router.post("/api/burgers", function(req, res) {
     });
 });
 
-router.delete("/api/burgers/:id", function(req, res) {
+app.delete("/api/burgers/:id", function(req, res) {
     connection.query("DELETE FROM burgers WHERE id = ?", [req.params.id], 
     function(err, result) {
         if (err) {
@@ -36,4 +36,4 @@ router.delete("/api/burgers/:id", function(req, res) {
     });
 });
 
-module.exports = router;
+module.exports = app;
