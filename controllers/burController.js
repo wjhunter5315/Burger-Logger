@@ -14,6 +14,8 @@ app.post("api/new", function(req, res) {
     burger = req.body
     Burger.create ({
         burger_name: burger.name
+    }).then(result => {
+        return res.json(result);
     })
 });
 

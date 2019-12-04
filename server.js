@@ -1,6 +1,6 @@
 var exphbs = require("express-handlebars");
 var express = require("express");
-var router = require("./controllers/burController.js");
+var router = require("./controllers/burgers_controller.js");
 
 
 var app = express();
